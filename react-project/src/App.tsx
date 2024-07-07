@@ -1,13 +1,11 @@
-import React from 'react'
-import './App.css'
-import MainPage from './pages/MainPage/MainPage'
+import React from "react";
+import "./App.css";
+import MainPage from "./pages/MainPage/MainPage";
 
 class App extends React.Component {
-render() {
-  return (
-    <MainPage/>
-  )
-}
+  render() {
+    return <MainPage />;
+  }
 }
 
-export default App
+export default App;

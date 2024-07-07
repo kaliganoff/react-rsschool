@@ -1,11 +1,22 @@
-import React from 'react'
+import React from "react";
 
 class Main extends React.Component {
-render() {
-  return (
-    <main>Hello</main>
-  )
-}
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <main>
+        {this.props.results.map((item) => (
+          <div>
+            <p>{item.name}</p>
+            <p>{item.gender}</p>
+          </div>
+        ))}
+      </main>
+    );
+  }
 }
 
-export default Main
+export default Main;
