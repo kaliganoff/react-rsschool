@@ -6,41 +6,37 @@ interface HeaderProps {
   onSearch: (query: string) => void;
 }
 
-function Header({ searchValue, onSearch } : HeaderProps) {
+function Header({ searchValue, onSearch }: HeaderProps) {
   const [inputValue, setInputValue] = useState<string>(searchValue);
   const [hasError, setHasError] = useState<boolean>(false);
-
 
   if (hasError) throw new Error("Error!");
 
   return (
-      <header className="header">
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            onSearch(inputValue);
+    <header className="header">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSearch(inputValue);
+        }}
+      >
+        <input
+          onInput={(e) => {
+            const { target } = e;
+            const value = (target as HTMLInputElement).value;
+            setInputValue(value);
           }}
-        >
-          <input
-            onInput={(e) => {
-              const { target } = e;
-              const value = (target as HTMLInputElement).value;
-              setInputValue(value);
-            }}
-            type="search"
-            placeholder="Search the Star Wars"
-            value={inputValue}
-          />
-          <button>Search</button>
-          <button
-            onClick={() => setHasError(true)}
-            type="button"
-          >
-            Throw error
-          </button>
-        </form>
-      </header>
-    );
+          type="search"
+          placeholder="Search the Star Wars"
+          value={inputValue}
+        />
+        <button>Search</button>
+        <button onClick={() => setHasError(true)} type="button">
+          Throw error
+        </button>
+      </form>
+    </header>
+  );
 }
 
 export default Header;
