@@ -1,53 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import Main from "../../components/Main/Main";
 import search from "../../services/search";
 
-interface MainPageState {
-  results: [];
-  isLoading: boolean;
-}
+function MainPage() {
+  const [results, setResults] = useState<[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-class MainPage extends React.Component<object, MainPageState> {
-  constructor(props: object) {
-    super(props);
-    this.HandleSearch = this.HandleSearch.bind(this);
-    this.state = {
-      results: [],
-      isLoading: false,
-    };
-  }
-
-  componentDidMount(): void {
+  useEffect(() => {
     if (localStorage.kaliganoffQuery) {
       search(localStorage.kaliganoffQuery).then((result: []) =>
-        this.setState({ results: result }),
+        setResults(result)
+      );
+    } else {
+      setIsLoading(true);
+      search('').then((result: []) => {
+        setResults(result);
+        setIsLoading(false);
+      }
       );
     }
-  }
+  }, [])
 
-  HandleSearch(query: string) {
-    this.setState({ isLoading: true });
-    search(query).then((result) =>
-      this.setState({ results: result, isLoading: false }),
+  function HandleSearch(query: string) {
+    setIsLoading(true);
+    search(query).then((result) => {
+      setResults(result); 
+      setIsLoading(false);
+    }
     );
     localStorage.kaliganoffQuery = query;
   }
 
-  render() {
-    return (
+  return (
       <>
         <Header
-          onSearch={this.HandleSearch}
+          onSearch={HandleSearch}
           searchValue={localStorage.kaliganoffQuery}
         ></Header>
         <Main
-          results={this.state.results}
-          isLoading={this.state.isLoading}
+          results={results}
+          isLoading={isLoading}
         ></Main>
       </>
     );
-  }
 }
 
 export default MainPage;

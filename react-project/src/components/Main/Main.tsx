@@ -14,18 +14,13 @@ interface ResultsItem {
   birth_year: string;
 }
 
-class Main extends React.Component<MainProps> {
-  constructor(props: MainProps) {
-    super(props);
-  }
-
-  render() {
+function Main({ results, isLoading }: MainProps) {
     return (
       <main className="main">
-        {this.props.isLoading ? (
+        {isLoading ? (
           <div className="loader"></div>
         ) : (
-          this.props.results.map((item: ResultsItem) => (
+          results.map((item: ResultsItem) => (
             <div className="item" key={item.name}>
               <p>Name: <b>{item.name}</b></p>
               <p>Gender: {item.gender}</p>
@@ -37,7 +32,6 @@ class Main extends React.Component<MainProps> {
         )}
       </main>
     );
-  }
 }
 
 export default Main;

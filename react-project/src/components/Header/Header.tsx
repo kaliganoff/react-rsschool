@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 
 interface HeaderProps {
@@ -6,48 +6,34 @@ interface HeaderProps {
   onSearch: (query: string) => void;
 }
 
-interface HeaderState {
-  inputValue: string;
-  hasError: boolean;
-}
+function Header({ searchValue, onSearch } : HeaderProps) {
+  const [inputValue, setInputValue] = useState<string>(searchValue);
+  const [hasError, setHasError] = useState<boolean>(false);
 
-class Header extends React.Component<HeaderProps, HeaderState> {
-  constructor(props: HeaderProps) {
-    super(props);
-    this.onSearch = this.onSearch.bind(this);
-    this.state = {
-      inputValue: this.props.searchValue,
-      hasError: false,
-    };
-  }
 
-  onSearch() {
-    this.props.onSearch(this.state.inputValue);
-  }
+  if (hasError) throw new Error("Error!");
 
-  render() {
-    if (this.state.hasError) throw new Error("Error!");
-
-    return (
+  return (
       <header className="header">
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            this.onSearch();
+            onSearch(inputValue);
           }}
         >
           <input
             onInput={(e) => {
               const { target } = e;
-              this.setState({ inputValue: (target as HTMLInputElement).value });
+              const value = (target as HTMLInputElement).value;
+              setInputValue(value);
             }}
             type="search"
             placeholder="Search the Star Wars"
-            value={this.state.inputValue}
+            value={inputValue}
           />
           <button>Search</button>
           <button
-            onClick={() => this.setState({ hasError: true })}
+            onClick={() => setHasError(true)}
             type="button"
           >
             Throw error
@@ -55,7 +41,6 @@ class Header extends React.Component<HeaderProps, HeaderState> {
         </form>
       </header>
     );
-  }
 }
 
 export default Header;
