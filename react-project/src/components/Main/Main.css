@@ -1,0 +1,40 @@
+.main {
+  display: flex;
+}
+
+.cards-list-container {
+  width: 100%;
+  text-align: center;
+}
+
+.cards-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1vw;
+  padding: 1vw;
+}
+
+.item {
+  background-color: antiquewhite;
+  border-radius: 5%;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  --_c: no-repeat radial-gradient(farthest-side, aqua 92%, #0000);
+  background:
+    var(--_c) top,
+    var(--_c) left,
+    var(--_c) right,
+    var(--_c) bottom;
+  background-size: 12px 12px;
+  animation: l7 1s infinite;
+  justify-self: center;
+  grid-column: 2;
+}
+@keyframes l7 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
