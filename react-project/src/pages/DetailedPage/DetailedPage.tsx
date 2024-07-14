@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Result } from "../../interfaces/interfaces";
 import "./DetailedPage.css";
 
 function DetailedPage() {
   const params = useParams();
   const [details, setDetails] = useState<Result>();
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   interface DetailedResultsItem {
     name: string;
@@ -25,21 +27,35 @@ function DetailedPage() {
       return result;
     }
     if (params.name) {
+      setIsLoading(true);
       search(params.name).then((result) => {
+        setIsLoading(false);
         setDetails(result);
       });
     }
   }, [params]);
 
   return (
-    <div className="detailed-page">
-      {details?.results.map((result: DetailedResultsItem) => (
-        <>
-          <p>Name: {result.name}</p>
-          <p>Mass: {result.mass}</p>
-        </>
-      ))}
-    </div>
+    <>
+      <div className="detailed-page">
+        {isLoading ? (
+          <div className="loader-detailed"></div>
+        ) : (
+          <>
+            <button onClick={() => navigate(-1)}>Close</button>
+            <div>
+              {details?.results.map((result: DetailedResultsItem) => (
+                <>
+                  <p>Name: {result.name}</p>
+                  <p>Mass: {result.mass}</p>
+                </>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+      <div className="detailed-page-overlay" onClick={() => navigate(-1)}></div>
+    </>
   );
 }
 

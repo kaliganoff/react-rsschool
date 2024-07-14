@@ -24,11 +24,6 @@ function MainPage() {
   }, [searchParams]);
 
   function HandleSearch(query: string) {
-    /*setIsLoading(true);
-    search(query).then((result) => {
-      setResults(result);
-      setIsLoading(false);
-    }); */
     setSearchParams({ search: query, page: "1" });
     setLSQuery(query);
   }
