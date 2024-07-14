@@ -13,7 +13,7 @@ function Header({ searchValue, onSearch }: HeaderProps) {
   if (hasError) throw new Error("Error!");
 
   return (
-    <header className="header">
+    <header className="header" data-testid="header">
       <form
         onSubmit={(e) => {
           e.preventDefault();

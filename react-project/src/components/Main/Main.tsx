@@ -42,11 +42,11 @@ function Main({ results, isLoading }: MainProps) {
   }
 
   return (
-    <main className="main">
-      <div className="cards-list-container">
+    <main className="main" data-testid="main">
+      <div className="cards-list-container" data-testid="cards-list-container">
         <div className="cards-list">
           {isLoading ? (
-            <div className="loader"></div>
+            <div className="loader" data-testid="loader"></div>
           ) : (
             <>
               {results.results.map((item: ResultsItem) => (
@@ -54,6 +54,7 @@ function Main({ results, isLoading }: MainProps) {
                   onClick={() => navigate(`details/${item.name}`)}
                   className="item"
                   key={item.name}
+                  data-testid="card"
                 >
                   <p>
                     Name: <b>{item.name}</b>

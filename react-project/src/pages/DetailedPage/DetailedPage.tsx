@@ -42,7 +42,9 @@ function DetailedPage() {
           <div className="loader-detailed"></div>
         ) : (
           <>
-            <button onClick={() => navigate(-1)}>Close</button>
+            <button data-testid="close-button" onClick={() => navigate(-1)}>
+              Close
+            </button>
             <div>
               {details?.results.map((result: DetailedResultsItem) => (
                 <>
