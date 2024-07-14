@@ -1,4 +1,13 @@
 .main {
+  display: flex;
+}
+
+.cards-list-container {
+  width: 100%;
+  text-align: center;
+}
+
+.cards-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1vw;

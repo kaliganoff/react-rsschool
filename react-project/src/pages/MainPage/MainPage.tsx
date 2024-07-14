@@ -3,34 +3,41 @@ import Header from "../../components/Header/Header";
 import Main from "../../components/Main/Main";
 import search from "../../services/search";
 import useLSQuery from "../../hooks/useLSQuery.ts";
+import { Result } from "../../interfaces/interfaces.ts";
+import { useSearchParams } from "react-router-dom";
 
 function MainPage() {
-  const [results, setResults] = useState<[]>([]);
+  const [results, setResults] = useState<Result>({ results: [], count: 0 });
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [query, setQuery] = useLSQuery();
+  const [LSQuery, setLSQuery] = useLSQuery();
+  const [searchParams, setSearchParams] = useSearchParams({
+    search: LSQuery,
+    page: "1",
+  });
 
   useEffect(() => {
     setIsLoading(true);
-    search(query).then((result) => {
+    search(searchParams).then((result) => {
       setResults(result);
       setIsLoading(false);
     });
-  }, [query]);
+  }, [searchParams]);
 
   function HandleSearch(query: string) {
-    setIsLoading(true);
+    /*setIsLoading(true);
     search(query).then((result) => {
       setResults(result);
       setIsLoading(false);
-    });
-    setQuery(query);
+    }); */
+    setSearchParams({ search: query, page: "1" });
+    setLSQuery(query);
   }
 
   return (
     <>
       <Header
         onSearch={HandleSearch}
-        searchValue={localStorage.kaliganoffQuery}
+        searchValue={searchParams.get("search") || ""}
       ></Header>
       <Main results={results} isLoading={isLoading}></Main>
     </>
