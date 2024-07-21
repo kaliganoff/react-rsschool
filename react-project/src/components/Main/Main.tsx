@@ -1,12 +1,7 @@
-import React from "react";
 import "./Main.css";
-import { Result } from "../../interfaces/interfaces";
 import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
-
-interface MainProps {
-  results: Result;
-  isLoading: boolean;
-}
+import { searchAPI } from "../../services/search";
+import { Result } from "../../interfaces/interfaces";
 
 interface ResultsItem {
   name: string;
@@ -16,13 +11,16 @@ interface ResultsItem {
   birth_year: string;
 }
 
-function Main({ results, isLoading }: MainProps) {
-  const searchParamsArray = useSearchParams();
-  const setSearchParams = searchParamsArray[1];
+function Main() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
+  const { data: res, isFetching } = searchAPI.useFetchAllPeopleQuery<{
+    data: Result;
+    isFetching: boolean;
+  }>({ search: searchParams.get("search"), page: searchParams.get("page") });
 
   function paginate() {
-    const numberOfPages = Math.floor(results.count / 9);
+    const numberOfPages = Math.floor(res && res.count / 9);
     const pages = [];
     for (let i = 0; i < numberOfPages; i++) {
       pages.push(
@@ -45,26 +43,31 @@ function Main({ results, isLoading }: MainProps) {
     <main className="main" data-testid="main">
       <div className="cards-list-container" data-testid="cards-list-container">
         <div className="cards-list">
-          {isLoading ? (
+          {isFetching ? (
             <div className="loader" data-testid="loader"></div>
           ) : (
             <>
-              {results.results.map((item: ResultsItem) => (
-                <div
-                  onClick={() => navigate(`details/${item.name}`)}
-                  className="item"
-                  key={item.name}
-                  data-testid="card"
-                >
-                  <p>
-                    Name: <b>{item.name}</b>
-                  </p>
-                  <p>Gender: {item.gender}</p>
-                  <p>Height: {item.height}</p>
-                  <p>Skin color: {item.skin_color}</p>
-                  <p>Birth year: {item.birth_year}</p>
-                </div>
-              ))}
+              {res &&
+                res.results.map((item: ResultsItem) => (
+                  <div
+                    onClick={() =>
+                      navigate(
+                        `details/${item.name}?search=${searchParams.get("search")}&page=${searchParams.get("page")}`,
+                      )
+                    }
+                    className="item"
+                    key={item.name}
+                    data-testid="card"
+                  >
+                    <p>
+                      Name: <b>{item.name}</b>
+                    </p>
+                    <p>Gender: {item.gender}</p>
+                    <p>Height: {item.height}</p>
+                    <p>Skin color: {item.skin_color}</p>
+                    <p>Birth year: {item.birth_year}</p>
+                  </div>
+                ))}
             </>
           )}
         </div>

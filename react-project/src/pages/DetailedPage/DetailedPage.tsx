@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Result } from "../../interfaces/interfaces";
 import "./DetailedPage.css";
+import { searchAPI } from "../../services/search";
 
 function DetailedPage() {
   const params = useParams();
-  const [details, setDetails] = useState<Result>();
+  /* const [details, setDetails] = useState<Result>(); */
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-
+  const { data: details, isFetching } = searchAPI.useFetchAllPeopleQuery<{
+    data: Result;
+    isFetching: boolean;
+  }>({ search: params.name, page: "1" });
   interface DetailedResultsItem {
     name: string;
     gender: string;
@@ -18,7 +20,7 @@ function DetailedPage() {
     mass: string;
   }
 
-  useEffect(() => {
+  /* useEffect(() => {
     async function search(query: string) {
       const response = await fetch(
         `https://swapi.dev/api/people/?search=${query}`,
@@ -33,12 +35,12 @@ function DetailedPage() {
         setDetails(result);
       });
     }
-  }, [params]);
+  }, [params]); */
 
   return (
     <>
       <div className="detailed-page">
-        {isLoading ? (
+        {isFetching ? (
           <div className="loader-detailed"></div>
         ) : (
           <>
