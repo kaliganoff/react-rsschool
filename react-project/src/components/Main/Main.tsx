@@ -2,6 +2,8 @@ import "./Main.css";
 import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 import { searchAPI } from "../../services/search";
 import { Result } from "../../interfaces/interfaces";
+import { PageSlice } from "../../store/reducers/PageSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 
 interface ResultsItem {
   name: string;
@@ -18,6 +20,9 @@ function Main() {
     data: Result;
     isFetching: boolean;
   }>({ search: searchParams.get("search"), page: searchParams.get("page") });
+  const { save, del } = PageSlice.actions;
+  const { ids } = useAppSelector((state) => state.SelectedItemsReducer);
+  const dispatch = useAppDispatch();
 
   function paginate() {
     const numberOfPages = Math.floor(res && res.count / 9);
@@ -66,6 +71,17 @@ function Main() {
                     <p>Height: {item.height}</p>
                     <p>Skin color: {item.skin_color}</p>
                     <p>Birth year: {item.birth_year}</p>
+                    <input
+                      type="checkbox"
+                      checked={ids.includes(item.name)}
+                      onChange={(e) => {
+                        if (e.currentTarget.checked) {
+                          dispatch(save(item.name));
+                        } else {
+                          dispatch(del(item.name));
+                        }
+                      }}
+                    />
                   </div>
                 ))}
             </>

@@ -1,1 +1,364 @@
-{"result":[{"scriptId":"1004","url":"file:///D:/rs-school/react-rsschool/react-project/src/tests/main.test.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":7465,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":7465,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":3561,"endOffset":4355,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":3616,"endOffset":4351,"count":1}],"isBlockCoverage":true}]},{"scriptId":"1443","url":"file:///D:/rs-school/react-rsschool/react-project/src/App.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":1397,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":1397,"count":1}],"isBlockCoverage":true},{"functionName":"App","ranges":[{"startOffset":514,"endOffset":761,"count":3}],"isBlockCoverage":true}]},{"scriptId":"1444","url":"file:///D:/rs-school/react-rsschool/react-project/src/App.css","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":486,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":486,"count":1}],"isBlockCoverage":true}]},{"scriptId":"1445","url":"file:///D:/rs-school/react-rsschool/react-project/src/pages/MainPage/MainPage.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":4074,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":4074,"count":1}],"isBlockCoverage":true},{"functionName":"MainPage","ranges":[{"startOffset":835,"endOffset":2069,"count":3},{"startOffset":1431,"endOffset":1436,"count":2}],"isBlockCoverage":true},{"functionName":"HandleSearch","ranges":[{"startOffset":1047,"endOffset":1155,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1446","url":"file:///D:/rs-school/react-rsschool/react-project/src/components/Header/Header.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":5541,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":5541,"count":1}],"isBlockCoverage":true},{"functionName":"Header","ranges":[{"startOffset":532,"endOffset":2642,"count":2},{"startOffset":749,"endOffset":775,"count":0}],"isBlockCoverage":true},{"functionName":"onSubmit","ranges":[{"startOffset":978,"endOffset":1052,"count":0}],"isBlockCoverage":false},{"functionName":"onInput","ranges":[{"startOffset":1178,"endOffset":1314,"count":0}],"isBlockCoverage":false},{"functionName":"onClick","ranges":[{"startOffset":2024,"endOffset":2047,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1448","url":"file:///D:/rs-school/react-rsschool/react-project/src/components/Header/Header.css","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":490,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":490,"count":1}],"isBlockCoverage":true}]},{"scriptId":"1449","url":"file:///D:/rs-school/react-rsschool/react-project/src/components/Main/Main.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":11939,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":11939,"count":1}],"isBlockCoverage":true},{"functionName":"Main","ranges":[{"startOffset":702,"endOffset":6030,"count":5},{"startOffset":2131,"endOffset":2407,"count":0},{"startOffset":2408,"endOffset":5252,"count":0}],"isBlockCoverage":true},{"functionName":"paginate","ranges":[{"startOffset":1025,"endOffset":1762,"count":0}],"isBlockCoverage":false},{"functionName":"","ranges":[{"startOffset":2522,"endOffset":5075,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1450","url":"file:///D:/rs-school/react-rsschool/react-project/src/components/Main/Main.css","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":486,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":486,"count":1}],"isBlockCoverage":true}]},{"scriptId":"1451","url":"file:///D:/rs-school/react-rsschool/react-project/src/services/search.ts","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":2714,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":2714,"count":1}],"isBlockCoverage":true},{"functionName":"endpoints","ranges":[{"startOffset":553,"endOffset":756,"count":1}],"isBlockCoverage":true},{"functionName":"query","ranges":[{"startOffset":614,"endOffset":744,"count":0}],"isBlockCoverage":false},{"functionName":"get","ranges":[{"startOffset":858,"endOffset":883,"count":4}],"isBlockCoverage":true}]},{"scriptId":"1463","url":"file:///D:/rs-school/react-rsschool/react-project/src/hooks/useLSQuery.ts","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":1819,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":1819,"count":1}],"isBlockCoverage":true},{"functionName":"useLSQuery","ranges":[{"startOffset":319,"endOffset":640,"count":3}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":402,"endOffset":490,"count":2},{"startOffset":450,"endOffset":480,"count":0}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":527,"endOffset":608,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1464","url":"file:///D:/rs-school/react-rsschool/react-project/src/components/ErrorBoundary/ErrorBoundary.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":2611,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":2611,"count":1}],"isBlockCoverage":true},{"functionName":"ErrorBoundary","ranges":[{"startOffset":378,"endOffset":458,"count":3}],"isBlockCoverage":true},{"functionName":"getDerivedStateFromError","ranges":[{"startOffset":468,"endOffset":531,"count":2}],"isBlockCoverage":true},{"functionName":"componentDidCatch","ranges":[{"startOffset":534,"endOffset":615,"count":1}],"isBlockCoverage":true},{"functionName":"render","ranges":[{"startOffset":618,"endOffset":735,"count":4},{"startOffset":658,"endOffset":734,"count":2}],"isBlockCoverage":true}]},{"scriptId":"1465","url":"file:///D:/rs-school/react-rsschool/react-project/src/pages/ErrorPage/ErrorPage.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":3508,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":3508,"count":1}],"isBlockCoverage":true},{"functionName":"ErrorPage","ranges":[{"startOffset":484,"endOffset":1955,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1466","url":"file:///D:/rs-school/react-rsschool/react-project/src/pages/DetailedPage/DetailedPage.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":7917,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":7917,"count":1}],"isBlockCoverage":true},{"functionName":"DetailedPage","ranges":[{"startOffset":698,"endOffset":3908,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1467","url":"file:///D:/rs-school/react-rsschool/react-project/src/pages/DetailedPage/DetailedPage.css","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":498,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":498,"count":1}],"isBlockCoverage":true}]}]}
+{
+  "result": [
+    {
+      "scriptId": "1004",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/tests/main.test.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 7465, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 7465, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 3561, "endOffset": 4355, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 3616, "endOffset": 4351, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1443",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/App.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 1397, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 1397, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "App",
+          "ranges": [{ "startOffset": 514, "endOffset": 761, "count": 3 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1444",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/App.css",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 486, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 486, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1445",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/pages/MainPage/MainPage.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 4074, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 4074, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "MainPage",
+          "ranges": [
+            { "startOffset": 835, "endOffset": 2069, "count": 3 },
+            { "startOffset": 1431, "endOffset": 1436, "count": 2 }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "HandleSearch",
+          "ranges": [{ "startOffset": 1047, "endOffset": 1155, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1446",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/components/Header/Header.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 5541, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 5541, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "Header",
+          "ranges": [
+            { "startOffset": 532, "endOffset": 2642, "count": 2 },
+            { "startOffset": 749, "endOffset": 775, "count": 0 }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "onSubmit",
+          "ranges": [{ "startOffset": 978, "endOffset": 1052, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "onInput",
+          "ranges": [{ "startOffset": 1178, "endOffset": 1314, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "onClick",
+          "ranges": [{ "startOffset": 2024, "endOffset": 2047, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1448",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/components/Header/Header.css",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 490, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 490, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1449",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/components/Main/Main.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 11939, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 11939, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "Main",
+          "ranges": [
+            { "startOffset": 702, "endOffset": 6030, "count": 5 },
+            { "startOffset": 2131, "endOffset": 2407, "count": 0 },
+            { "startOffset": 2408, "endOffset": 5252, "count": 0 }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "paginate",
+          "ranges": [{ "startOffset": 1025, "endOffset": 1762, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 2522, "endOffset": 5075, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1450",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/components/Main/Main.css",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 486, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 486, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1451",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/services/search.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 2714, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 2714, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "endpoints",
+          "ranges": [{ "startOffset": 553, "endOffset": 756, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "query",
+          "ranges": [{ "startOffset": 614, "endOffset": 744, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 858, "endOffset": 883, "count": 4 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1463",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/hooks/useLSQuery.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 1819, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 1819, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "useLSQuery",
+          "ranges": [{ "startOffset": 319, "endOffset": 640, "count": 3 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            { "startOffset": 402, "endOffset": 490, "count": 2 },
+            { "startOffset": 450, "endOffset": 480, "count": 0 }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 527, "endOffset": 608, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1464",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/components/ErrorBoundary/ErrorBoundary.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 2611, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 2611, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "ErrorBoundary",
+          "ranges": [{ "startOffset": 378, "endOffset": 458, "count": 3 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "getDerivedStateFromError",
+          "ranges": [{ "startOffset": 468, "endOffset": 531, "count": 2 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "componentDidCatch",
+          "ranges": [{ "startOffset": 534, "endOffset": 615, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "render",
+          "ranges": [
+            { "startOffset": 618, "endOffset": 735, "count": 4 },
+            { "startOffset": 658, "endOffset": 734, "count": 2 }
+          ],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1465",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/pages/ErrorPage/ErrorPage.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 3508, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 3508, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "ErrorPage",
+          "ranges": [{ "startOffset": 484, "endOffset": 1955, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1466",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/pages/DetailedPage/DetailedPage.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 7917, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 7917, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "DetailedPage",
+          "ranges": [{ "startOffset": 698, "endOffset": 3908, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1467",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/pages/DetailedPage/DetailedPage.css",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 498, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 498, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,117 @@
-{"result":[{"scriptId":"1004","url":"file:///D:/rs-school/react-rsschool/react-project/src/tests/DetailedPage.test.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":3226,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":3226,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":1045,"endOffset":1808,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":1104,"endOffset":1804,"count":1}],"isBlockCoverage":true}]},{"scriptId":"1011","url":"file:///D:/rs-school/react-rsschool/react-project/src/pages/DetailedPage/DetailedPage.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":7917,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":7917,"count":1}],"isBlockCoverage":true},{"functionName":"DetailedPage","ranges":[{"startOffset":698,"endOffset":3908,"count":5},{"startOffset":1171,"endOffset":1434,"count":0},{"startOffset":1435,"endOffset":3253,"count":0}],"isBlockCoverage":true},{"functionName":"onClick","ranges":[{"startOffset":1631,"endOffset":1649,"count":0}],"isBlockCoverage":false},{"functionName":"","ranges":[{"startOffset":1948,"endOffset":2881,"count":0}],"isBlockCoverage":false},{"functionName":"onClick","ranges":[{"startOffset":3536,"endOffset":3554,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1075","url":"file:///D:/rs-school/react-rsschool/react-project/src/pages/DetailedPage/DetailedPage.css","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":498,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":498,"count":1}],"isBlockCoverage":true}]},{"scriptId":"1076","url":"file:///D:/rs-school/react-rsschool/react-project/src/services/search.ts","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":2714,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":2714,"count":1}],"isBlockCoverage":true},{"functionName":"endpoints","ranges":[{"startOffset":553,"endOffset":756,"count":1}],"isBlockCoverage":true},{"functionName":"query","ranges":[{"startOffset":614,"endOffset":744,"count":0}],"isBlockCoverage":false},{"functionName":"get","ranges":[{"startOffset":858,"endOffset":883,"count":4}],"isBlockCoverage":true}]}]}
+{
+  "result": [
+    {
+      "scriptId": "1004",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/tests/DetailedPage.test.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 3226, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 3226, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1045, "endOffset": 1808, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1104, "endOffset": 1804, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1011",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/pages/DetailedPage/DetailedPage.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 7917, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 7917, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "DetailedPage",
+          "ranges": [
+            { "startOffset": 698, "endOffset": 3908, "count": 5 },
+            { "startOffset": 1171, "endOffset": 1434, "count": 0 },
+            { "startOffset": 1435, "endOffset": 3253, "count": 0 }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "onClick",
+          "ranges": [{ "startOffset": 1631, "endOffset": 1649, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1948, "endOffset": 2881, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "onClick",
+          "ranges": [{ "startOffset": 3536, "endOffset": 3554, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1075",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/pages/DetailedPage/DetailedPage.css",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 498, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 498, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1076",
+      "url": "file:///D:/rs-school/react-rsschool/react-project/src/services/search.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 2714, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 2714, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "endpoints",
+          "ranges": [{ "startOffset": 553, "endOffset": 756, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "query",
+          "ranges": [{ "startOffset": 614, "endOffset": 744, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 858, "endOffset": 883, "count": 4 }],
+          "isBlockCoverage": true
+        }
+      ]
+    }
+  ]
+}
