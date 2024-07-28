@@ -29,6 +29,7 @@ function Main() {
       pages.push(
         <button
           className={isLightTheme ? "" : "button-dark"}
+          data-testid='pagi'
           onClick={() =>
             setSearchParams((searchParams) => {
               searchParams.set("page", `${i + 1}`);
@@ -87,6 +88,7 @@ function Main() {
                     <p>Birth year: {item.birth_year}</p>
                     <input
                       type="checkbox"
+                      data-testid='checkbox'
                       checked={items.includes(item)}
                       onChange={(e) => {
                         if (e.currentTarget.checked) {
@@ -106,6 +108,7 @@ function Main() {
       {items.length > 0 && (
         <div
           className={`flyout ${isLightTheme ? "flyout-light" : "flyout-dark"}`}
+          data-testid='flyout'
         >
           <p>Number of selected items: {items.length}</p>
           <button
