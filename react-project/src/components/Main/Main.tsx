@@ -2,7 +2,7 @@ import "./Main.css";
 import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 import { searchAPI } from "../../services/search";
 import { Result, ResultsItem } from "../../interfaces/interfaces";
-import { PageSlice } from "../../store/reducers/PageSlice";
+import { SelectedItemsSlice } from "../../store/reducers/SelectedItemsSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { ThemeContext } from "../../context/ThemeContext";
 import { useContext } from "react";
@@ -17,8 +17,8 @@ function Main() {
     search: searchParams.get("search") || "",
     page: searchParams.get("page") || "1",
   });
-  const { save, del, delAll } = PageSlice.actions;
-  const { ids } = useAppSelector((state) => state.SelectedItemsReducer);
+  const { save, del, delAll } = SelectedItemsSlice.actions;
+  const { items } = useAppSelector((state) => state.SelectedItemsReducer);
   const dispatch = useAppDispatch();
   const { isLightTheme } = useContext(ThemeContext);
 
@@ -46,11 +46,11 @@ function Main() {
   function HandleSave() {
     const csvContent =
       "data:text/csv;charset=utf-8," +
-      ids.map((item) => Object.values(item).join(",")).join("\n");
+      items.map((item) => Object.values(item).join(",")).join("\n");
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `${ids.length}.csv`);
+    link.setAttribute("download", `${items.length}.csv`);
     link.click();
   }
 
@@ -87,7 +87,7 @@ function Main() {
                     <p>Birth year: {item.birth_year}</p>
                     <input
                       type="checkbox"
-                      checked={ids.includes(item)}
+                      checked={items.includes(item)}
                       onChange={(e) => {
                         if (e.currentTarget.checked) {
                           dispatch(save(item));
@@ -103,11 +103,11 @@ function Main() {
         </div>
         {paginate()}
       </div>
-      {ids.length > 0 && (
+      {items.length > 0 && (
         <div
           className={`flyout ${isLightTheme ? "flyout-light" : "flyout-dark"}`}
         >
-          <p>{ids.length}</p>
+          <p>{items.length}</p>
           <button
             className={isLightTheme ? "" : "button-dark"}
             onClick={() => dispatch(delAll())}

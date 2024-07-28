@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import "./Header.css";
 import { ThemeContext } from "../../context/ThemeContext";
 

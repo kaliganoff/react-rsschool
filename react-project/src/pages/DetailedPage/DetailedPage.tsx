@@ -5,7 +5,6 @@ import { searchAPI } from "../../services/search";
 
 function DetailedPage() {
   const params = useParams();
-  /* const [details, setDetails] = useState<Result>(); */
   const navigate = useNavigate();
   const { data: details, isFetching } = searchAPI.useFetchAllPeopleQuery<{
     data: Result;
@@ -20,28 +19,11 @@ function DetailedPage() {
     mass: string;
   }
 
-  /* useEffect(() => {
-    async function search(query: string) {
-      const response = await fetch(
-        `https://swapi.dev/api/people/?search=${query}`,
-      );
-      const result: Result = await response.json();
-      return result;
-    }
-    if (params.name) {
-      setIsLoading(true);
-      search(params.name).then((result) => {
-        setIsLoading(false);
-        setDetails(result);
-      });
-    }
-  }, [params]); */
-
   return (
     <>
       <div className="detailed-page">
         {isFetching ? (
-          <div className="loader-detailed"></div>
+          <div className="loader-detailed" data-testid="loader-detailed"></div>
         ) : (
           <>
             <button data-testid="close-button" onClick={() => navigate(-1)}>

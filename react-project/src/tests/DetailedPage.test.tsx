@@ -3,14 +3,18 @@ import DetailedPage from "../pages/DetailedPage/DetailedPage";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
+import { Provider } from "react-redux";
+import { store } from "../store/store";
 
 describe("DetailedPage", () => {
   it("renders DetailedPage", async () => {
     render(
-      <MemoryRouter>
-        <DetailedPage />
-      </MemoryRouter>,
+      <Provider store={store}>
+        <MemoryRouter>
+          <DetailedPage />
+        </MemoryRouter>
+      </Provider>,
     );
-    expect(screen.getByTestId("close-button")).toBeInTheDocument;
+    expect(screen.getByTestId("loader-detailed")).toBeInTheDocument;
   });
 });

@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { searchAPI } from "../services/search";
-import SelectedItemsReducer from "../store/reducers/PageSlice";
+import SelectedItemsReducer from "./reducers/SelectedItemsSlice";
 
 export const store = configureStore({
   reducer: { SelectedItemsReducer, [searchAPI.reducerPath]: searchAPI.reducer },

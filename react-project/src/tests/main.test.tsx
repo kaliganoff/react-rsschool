@@ -11,6 +11,9 @@ import App from "../App";
 import ErrorBoundary from "../components/ErrorBoundary/ErrorBoundary";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import DetailedPage from "../pages/DetailedPage/DetailedPage";
+import { ThemeProvider } from "../context/ThemeContext";
+import { Provider } from "react-redux";
+import { store } from "../store/store";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,7 +33,11 @@ const router = createBrowserRouter(
 
 describe("MainPage", () => {
   it("renders MainPage", async () => {
-    render(<RouterProvider router={router} />);
+    render(    <ThemeProvider>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </ThemeProvider>);
     expect(screen.getByTestId("header")).toBeInTheDocument;
     expect(screen.getByTestId("main")).toBeInTheDocument;
     expect(screen.getByTestId("cards-list-container")).toBeInTheDocument;
