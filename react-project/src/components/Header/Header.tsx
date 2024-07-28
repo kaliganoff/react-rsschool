@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Header.css";
+import { ThemeContext } from "../../context/ThemeContext";
 
 interface HeaderProps {
   searchValue: string;
@@ -9,11 +10,15 @@ interface HeaderProps {
 function Header({ searchValue, onSearch }: HeaderProps) {
   const [inputValue, setInputValue] = useState<string>(searchValue);
   const [hasError, setHasError] = useState<boolean>(false);
+  const { isLightTheme, toggleTheme } = useContext(ThemeContext);
 
   if (hasError) throw new Error("Error!");
 
   return (
-    <header className="header" data-testid="header">
+    <header
+      className={`header ${isLightTheme ? "header-light" : "header-dark"}`}
+      data-testid="header"
+    >
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -30,9 +35,19 @@ function Header({ searchValue, onSearch }: HeaderProps) {
           placeholder="Search the Star Wars"
           value={inputValue}
         />
-        <button>Search</button>
-        <button onClick={() => setHasError(true)} type="button">
+        <button className={isLightTheme ? "" : "button-dark"}>Search</button>
+        <button
+          className={isLightTheme ? "" : "button-dark"}
+          onClick={() => setHasError(true)}
+          type="button"
+        >
           Throw error
+        </button>
+        <button
+          className={isLightTheme ? "" : "button-dark"}
+          onClick={() => toggleTheme()}
+        >
+          {isLightTheme ? "Switch to Dark mode" : "Switch to Light mode"}
         </button>
       </form>
     </header>

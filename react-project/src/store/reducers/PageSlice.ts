@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { ResultsItem } from "../../interfaces/interfaces";
 
-const initialState = {
+const initialState: { ids: ResultsItem[] } = {
   ids: [],
-  count: 0,
 };
 
 export const PageSlice = createSlice({
@@ -14,6 +14,9 @@ export const PageSlice = createSlice({
     },
     del(state, action) {
       state.ids.splice(state.ids.indexOf(action.payload), 1);
+    },
+    delAll(state) {
+      state.ids = [];
     },
   },
 });

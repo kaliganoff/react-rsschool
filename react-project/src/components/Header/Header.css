@@ -1,5 +1,12 @@
 .header {
-  background-color: aqua;
   display: flex;
   justify-content: center;
+}
+
+.header-light {
+  background-color: aqua;
+}
+
+.header-dark {
+  background-color: darkcyan;
 }

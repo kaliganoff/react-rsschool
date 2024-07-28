@@ -2,6 +2,15 @@
   display: flex;
 }
 
+.main-light {
+  background-color: white;
+}
+
+.main-dark {
+  background-color: black;
+  color: white;
+}
+
 .cards-list-container {
   width: 100%;
   text-align: center;
@@ -15,8 +24,15 @@
 }
 
 .item {
-  background-color: antiquewhite;
   border-radius: 5%;
+}
+
+.item-light {
+  background-color: antiquewhite;
+}
+
+.item-dark {
+  background-color: darkred;
 }
 
 .loader {
