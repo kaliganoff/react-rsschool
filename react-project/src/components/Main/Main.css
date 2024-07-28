@@ -54,3 +54,20 @@
     transform: rotate(0.5turn);
   }
 }
+
+.flyout {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  border: 1px solid;
+  border-radius: 7%;
+  padding: 1em;
+}
+
+.flyout-light {
+  background-color: pink;
+}
+
+.flyout-dark {
+  background-color: darkorchid;
+}

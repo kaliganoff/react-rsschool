@@ -104,7 +104,9 @@ function Main() {
         {paginate()}
       </div>
       {ids.length > 0 && (
-        <div>
+        <div
+          className={`flyout ${isLightTheme ? "flyout-light" : "flyout-dark"}`}
+        >
           <p>{ids.length}</p>
           <button
             className={isLightTheme ? "" : "button-dark"}
