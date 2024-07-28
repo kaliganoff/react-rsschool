@@ -107,7 +107,7 @@ function Main() {
         <div
           className={`flyout ${isLightTheme ? "flyout-light" : "flyout-dark"}`}
         >
-          <p>{items.length}</p>
+          <p>Number of selected items: {items.length}</p>
           <button
             className={isLightTheme ? "" : "button-dark"}
             onClick={() => dispatch(delAll())}

@@ -6,13 +6,13 @@ const initialState: { items: ResultsItem[] } = {
 };
 
 export const SelectedItemsSlice = createSlice({
-  name: "page",
+  name: "selected",
   initialState,
   reducers: {
-    save(state, action: { payload: ResultsItem}) {
+    save(state, action) {
       state.items.push(action.payload);
     },
-    del(state, action: { payload: ResultsItem}) {
+    del(state, action) {
       state.items.splice(state.items.indexOf(action.payload), 1);
     },
     delAll(state) {
