@@ -1,1 +1,2 @@
 cd react-project
+npm run test
