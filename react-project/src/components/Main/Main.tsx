@@ -50,7 +50,7 @@ function Main() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `${items.length}.csv`);
+    link.setAttribute("download", `${items.length}_items.csv`);
     link.click();
   }
 
