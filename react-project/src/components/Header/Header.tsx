@@ -40,7 +40,7 @@ function Header({ searchValue, onSearch }: HeaderProps) {
           className={isLightTheme ? "" : "button-dark"}
           onClick={() => setHasError(true)}
           type="button"
-          data-testid='error-button'
+          data-testid="error-button"
         >
           Throw error
         </button>

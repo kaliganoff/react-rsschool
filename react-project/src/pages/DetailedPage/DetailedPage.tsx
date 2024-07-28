@@ -31,7 +31,7 @@ function DetailedPage() {
             </button>
             <div>
               {details?.results.map((result: DetailedResultsItem) => (
-                <div key='1'>
+                <div key="1">
                   <p>Name: {result.name}</p>
                   <p>Mass: {result.mass}</p>
                 </div>
@@ -40,7 +40,11 @@ function DetailedPage() {
           </>
         )}
       </div>
-      <div className="detailed-page-overlay" data-testid="detailed-page-overlay" onClick={() => navigate(-1)}></div>
+      <div
+        className="detailed-page-overlay"
+        data-testid="detailed-page-overlay"
+        onClick={() => navigate(-1)}
+      ></div>
     </>
   );
 }
