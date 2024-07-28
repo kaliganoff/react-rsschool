@@ -1,0 +1,30 @@
+.detailed-page {
+  width: 50%;
+  z-index: 1;
+}
+
+.detailed-page-overlay {
+  position: fixed;
+  top: -50%;
+  height: 200%;
+  width: 100%;
+  z-index: 0;
+}
+
+.loader-detailed {
+  width: 50px;
+  aspect-ratio: 1;
+  --_c: no-repeat radial-gradient(farthest-side, aqua 92%, #0000);
+  background:
+    var(--_c) top,
+    var(--_c) left,
+    var(--_c) right,
+    var(--_c) bottom;
+  background-size: 12px 12px;
+  animation: l7 1s infinite;
+}
+@keyframes l7 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
