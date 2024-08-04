@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import "./Header.css";
 import { ThemeContext } from "../../context/ThemeContext";
 
 interface HeaderProps {

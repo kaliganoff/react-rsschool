@@ -1,15 +1,15 @@
-import { useNavigate, useParams } from "react-router-dom";
 import { Result } from "../../interfaces/interfaces";
-import "./DetailedPage.css";
 import { searchAPI } from "../../services/search";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
 
 function DetailedPage() {
-  const params = useParams();
-  const navigate = useNavigate();
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const { data: details, isFetching } = searchAPI.useFetchAllPeopleQuery<{
     data: Result;
     isFetching: boolean;
-  }>({ search: params.name, page: "1" });
+  }>({ search: searchParams.get("name"), page: "1" });
   interface DetailedResultsItem {
     name: string;
     gender: string;
@@ -26,7 +26,7 @@ function DetailedPage() {
           <div className="loader-detailed" data-testid="loader-detailed"></div>
         ) : (
           <>
-            <button data-testid="close-button" onClick={() => navigate(-1)}>
+            <button data-testid="close-button" onClick={() => router.back()}>
               Close
             </button>
             <div>
@@ -43,7 +43,7 @@ function DetailedPage() {
       <div
         className="detailed-page-overlay"
         data-testid="detailed-page-overlay"
-        onClick={() => navigate(-1)}
+        onClick={() => router.back()}
       ></div>
     </>
   );

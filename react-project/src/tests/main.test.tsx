@@ -9,7 +9,7 @@ import {
 import "@testing-library/jest-dom";
 import App from "../App";
 import ErrorBoundary from "../components/ErrorBoundary/ErrorBoundary";
-import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import ErrorPage from "../pages/404";
 import DetailedPage from "../pages/DetailedPage/DetailedPage";
 import { ThemeProvider } from "../context/ThemeContext";
 import { Provider } from "react-redux";

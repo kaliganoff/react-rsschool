@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --open",
+    "dev": "next",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format:fix": "prettier . --write",
-    "preview": "vite preview",
+    "preview": "next preview",
     "prepare": "cd .. && husky react-project/.husky",
     "test": "vitest run --coverage"
   },
@@ -16,6 +16,7 @@
     "@reduxjs/toolkit": "^2.2.6",
     "@types/react-redux": "^7.1.33",
     "msw": "^2.3.4",
+    "next": "^14.2.5",
     "normalize.css": "^8.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

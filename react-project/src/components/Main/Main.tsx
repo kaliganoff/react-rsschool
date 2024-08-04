@@ -1,15 +1,22 @@
-import "./Main.css";
-import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
+import "../../styles/Main.module.css";
 import { searchAPI } from "../../services/search";
 import { Result, ResultsItem } from "../../interfaces/interfaces";
 import { SelectedItemsSlice } from "../../store/reducers/SelectedItemsSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { ThemeContext } from "../../context/ThemeContext";
 import { useContext } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
+import DetailedPage from "../../pages/DetailedPage/DetailedPage";
+
+export const getServerSideProps = async () => {
+  await fetch("https://swapi.dev/api/people");
+};
 
 function Main() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const navigate = useNavigate();
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const { data: res, isFetching } = searchAPI.useFetchAllPeopleQuery<{
     data: Result;
     isFetching: boolean;
@@ -31,10 +38,9 @@ function Main() {
           className={isLightTheme ? "" : "button-dark"}
           data-testid="pagi"
           onClick={() =>
-            setSearchParams((searchParams) => {
-              searchParams.set("page", `${i + 1}`);
-              return searchParams;
-            })
+            router.push(
+              `${pathname}?search=${searchParams.get("search")}&page=${i + 1}`,
+            )
           }
         >
           {i + 1}
@@ -71,8 +77,8 @@ function Main() {
                   <div
                     onClick={(e) => {
                       if (e.currentTarget !== e.target) return;
-                      navigate(
-                        `details/${item.name}?search=${searchParams.get("search")}&page=${searchParams.get("page")}`,
+                      router.push(
+                        `${pathname}/?search=${searchParams.get("search")}&page=${searchParams.get("page")}&details=1&name=${item.name}`,
                       );
                     }}
                     className={`item ${isLightTheme ? "item-light" : "item-dark"}`}
@@ -125,7 +131,7 @@ function Main() {
           </button>
         </div>
       )}
-      <Outlet />
+      {searchParams.get("details") && <DetailedPage />}
     </main>
   );
 }
