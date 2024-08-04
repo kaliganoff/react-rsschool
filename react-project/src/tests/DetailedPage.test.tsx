@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import DetailedPage from "../pages/DetailedPage/DetailedPage";
+import DetailedPage from "../components/DetailedPageComponent/DetailedPageComponent";
 import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom";

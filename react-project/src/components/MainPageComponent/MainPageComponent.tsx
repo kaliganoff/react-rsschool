@@ -1,5 +1,5 @@
-import Header from "../../components/Header/Header";
-import Main from "../../components/Main/Main";
+import Header from "../Header/Header";
+import Main from "../Main/Main";
 import { useAppDispatch } from "../../hooks/redux";
 import useLSQuery from "../../hooks/useLSQuery";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -16,8 +16,9 @@ function MainPage() {
   const { delAll } = SelectedItemsSlice.actions;
 
   useEffect(() => {
+    if (searchParams.get("search") !== LSQuery)
     router.push(`${pathname}?search=${LSQuery}&page=1`);
-  }, [LSQuery, pathname, router]);
+  }, [LSQuery, pathname, router, searchParams]);
 
   function HandleSearch(query: string) {
     router.push(`${pathname}?search=${query}&page=1`);

@@ -7,7 +7,7 @@ import { ThemeContext } from "../../context/ThemeContext";
 import { useContext } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
-import DetailedPage from "../../pages/DetailedPage/DetailedPage";
+import DetailedPage from "../DetailedPageComponent/DetailedPageComponent";
 
 export const getServerSideProps = async () => {
   await fetch("https://swapi.dev/api/people");
