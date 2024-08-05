@@ -1,4 +1,3 @@
-import "../../styles/Main.module.css";
 import { searchAPI } from "../../services/search";
 import { Result, ResultsItem } from "../../interfaces/interfaces";
 import { SelectedItemsSlice } from "../../store/reducers/SelectedItemsSlice";
