@@ -37,6 +37,7 @@ function Main() {
         <button
           className={isLightTheme ? "" : "button-dark"}
           data-testid="pagi"
+          key={i}
           onClick={() =>
             router.push(
               `${pathname}?search=${searchParams.get("search")}&page=${i + 1}`,
@@ -78,7 +79,7 @@ function Main() {
                     onClick={(e) => {
                       if (e.currentTarget !== e.target) return;
                       router.push(
-                        `${pathname}/?search=${searchParams.get("search")}&page=${searchParams.get("page")}&details=1&name=${item.name}`,
+                        `${pathname}?search=${searchParams.get("search")}&page=${searchParams.get("page")}&details=1&name=${item.name}`,
                       );
                     }}
                     className={`item ${isLightTheme ? "item-light" : "item-dark"}`}
