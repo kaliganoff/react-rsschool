@@ -4,7 +4,7 @@ import { useAppDispatch } from "../../hooks/redux";
 import useLSQuery from "../../hooks/useLSQuery";
 import { usePathname, useSearchParams } from "next/navigation";
 import { SelectedItemsSlice } from "../../store/reducers/SelectedItemsSlice";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 function MainPage() {

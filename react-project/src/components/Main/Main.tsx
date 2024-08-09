@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { ThemeContext } from "../../context/ThemeContext";
 import { useContext } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import DetailedPage from "../DetailedPageComponent/DetailedPageComponent";
 
 export const getServerSideProps = async () => {
