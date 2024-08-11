@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 
 function useLSQuery() {
   const [query, setQuery] = useState<string>(() => {
-    return localStorage.kaliganoffQuery ? localStorage.kaliganoffQuery : "";
+    if (typeof window !== "undefined")
+      return localStorage.kaliganoffQuery ? localStorage.kaliganoffQuery : "";
   });
 
   useEffect(() => {
