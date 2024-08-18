@@ -2,12 +2,15 @@ import { useForm } from "react-hook-form";
 import { FormsSlice } from "../../store/reducers/FormsSlice";
 import { useAppDispatch } from "../../hooks/redux";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { validationSchema } from "../../validation/validation";
 
 function ControlledPage() {
   const { register, handleSubmit, getValues } = useForm();
   const { saveControlled } = FormsSlice.actions;
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const [formState] = useState(getValues());
 
   function getBase64(file) {
     return new Promise((resolve, reject) => {
@@ -28,29 +31,60 @@ function ControlledPage() {
       <form
         onSubmit={handleSubmit(async (data) => {
           data.file = await getBase64(getValues("file")[0]);
-          dispatch(saveControlled(data));
-          navigate("/");
+          const isValid = await validationSchema.isValid(data);
+          if (isValid && data.password === data.password2) {
+            dispatch(saveControlled(data));
+            navigate("/");
+          } else {
+            alert("Not valid or passwords don't match");
+          }
         })}
       >
         <label htmlFor="name">Name</label>
-        <input type="text" {...register("name")} />
+        <input type="text" value={formState.name} {...register("name")} />
         <label htmlFor="age">Age</label>
-        <input type="number" {...register("age")} />
+        <input
+          type="number"
+          value={formState.age}
+          min="0"
+          {...register("age")}
+        />
         <label htmlFor="email">E-mail</label>
-        <input type="email" {...register("email")} />
+        <input type="email" value={formState.email} {...register("email")} />
         <label htmlFor="password">Password</label>
-        <input type="password" {...register("password")} />
+        <input
+          type="password"
+          value={formState.password}
+          {...register("password")}
+        />
         <label htmlFor="password2">Repeat password</label>
-        <input type="password" {...register("password2")} />
+        <input
+          type="password"
+          value={formState.password2}
+          {...register("password2")}
+        />
         <label htmlFor="gender">Gender</label>
-        <select {...register("gender")} id="">
+        <select value={formState.gender} {...register("gender")}>
           <option value="male">Male</option>
           <option value="female">Female</option>
         </select>
         <label htmlFor="tc">I agree to terms and conditions</label>
-        <input type="checkbox" {...register("tc")} />
-        <input type="file" {...register("file")} />
-        <button>Submit</button>
+        <input checked={formState.tc} type="checkbox" {...register("tc")} />
+        <input type="file" value={formState.file} {...register("file")} />
+        <datalist id="countries">
+          <option value="UK"></option>
+          <option value="USA"></option>
+          <option value="Japan"></option>
+          <option value="China"></option>
+          <option value="Russia"></option>
+        </datalist>
+        <input
+          type="text"
+          list="countries"
+          {...register("country")}
+          value={formState.country}
+        />
+        <button disabled={!validationSchema.isValid(formState)}>Submit</button>
       </form>
     </>
   );

@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useAppDispatch } from "../../hooks/redux";
 import { FormsSlice } from "../../store/reducers/FormsSlice";
 import { useNavigate } from "react-router-dom";
+import { validationSchema } from "../../validation/validation";
 
 function UncontrolledPage() {
   const formRef = useRef(null);
@@ -32,8 +33,13 @@ function UncontrolledPage() {
       formValues[key] = value;
     });
     formValues["file"] = await getBase64(fileRef.current.files[0]);
-    dispatch(saveUncontrolled(formValues));
-    navigate("/");
+    const isValid = await validationSchema.isValid(formValues);
+    if (isValid && formValues.password === formValues.password2) {
+      dispatch(saveUncontrolled(formValues));
+      navigate("/");
+    } else {
+      alert("Not valid or passwords don't match");
+    }
   }
 
   return (
@@ -42,7 +48,7 @@ function UncontrolledPage() {
         <label htmlFor="name">Name</label>
         <input type="text" name="name" />
         <label htmlFor="age">Age</label>
-        <input type="number" name="age" />
+        <input type="number" min="0" name="age" />
         <label htmlFor="email">E-mail</label>
         <input type="email" name="email" />
         <label htmlFor="password">Password</label>
@@ -57,6 +63,14 @@ function UncontrolledPage() {
         <label htmlFor="tc">I agree to terms and conditions</label>
         <input type="checkbox" name="tc" />
         <input type="file" name="file" ref={fileRef} />
+        <datalist id="countries">
+          <option value="UK"></option>
+          <option value="USA"></option>
+          <option value="Japan"></option>
+          <option value="China"></option>
+          <option value="Russia"></option>
+        </datalist>
+        <input type="text" list="countries" name="country" />
         <button>Submit</button>
       </form>
     </>
