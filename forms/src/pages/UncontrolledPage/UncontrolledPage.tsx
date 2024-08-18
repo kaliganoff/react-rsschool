@@ -5,17 +5,33 @@ import { useNavigate } from "react-router-dom";
 
 function UncontrolledPage() {
   const formRef = useRef(null);
+  const fileRef = useRef(null);
   const { saveUncontrolled } = FormsSlice.actions;
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  function getBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(file);
+      reader.onload = function () {
+        resolve(reader.result);
+      };
+      reader.onerror = function (error) {
+        reject(error);
+      };
+    });
+  }
+
+  async function handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData(formRef.current);
     const formValues = {};
     formData.forEach((value, key) => {
       formValues[key] = value;
     });
+    formValues["file"] = await getBase64(fileRef.current.files[0]);
     dispatch(saveUncontrolled(formValues));
     navigate("/");
   }
@@ -33,8 +49,14 @@ function UncontrolledPage() {
         <input type="password" name="password" />
         <label htmlFor="password2">Repeat password</label>
         <input type="password" name="password2" />
+        <label htmlFor="gender">Gender</label>
+        <select name="gender" id="">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
         <label htmlFor="tc">I agree to terms and conditions</label>
         <input type="checkbox" name="tc" />
+        <input type="file" name="file" ref={fileRef} />
         <button>Submit</button>
       </form>
     </>
