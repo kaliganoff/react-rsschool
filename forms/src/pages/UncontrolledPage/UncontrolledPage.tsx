@@ -4,6 +4,11 @@ import { FormsSlice } from "../../store/reducers/FormsSlice";
 import { useNavigate } from "react-router-dom";
 import { validationSchema } from "../../validation/validation";
 
+interface FormValues {
+  name: FormDataEntryValue,
+  file: string | ArrayBuffer | null
+}
+
 function UncontrolledPage() {
   const formRef = useRef(null);
   const fileRef = useRef(null);
@@ -11,7 +16,7 @@ function UncontrolledPage() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  function getBase64(file) {
+  function getBase64(file: Blob): Promise<string | ArrayBuffer | null> {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
 
@@ -25,12 +30,12 @@ function UncontrolledPage() {
     });
   }
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: Event) {
     e.preventDefault();
     const formData = new FormData(formRef.current);
-    const formValues = {};
+    const formValues: FormValues = { name: '', file: ''};
     formData.forEach((value, key) => {
-      formValues[key] = value;
+      formValues[key as keyof FormValues] = value;
     });
     formValues["file"] = await getBase64(fileRef.current.files[0]);
     const isValid = await validationSchema.isValid(formValues);

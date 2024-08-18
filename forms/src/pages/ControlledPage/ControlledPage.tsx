@@ -12,7 +12,7 @@ function ControlledPage() {
   const navigate = useNavigate();
   const [formState] = useState(getValues());
 
-  function getBase64(file) {
+  function getBase64(file: Blob) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
 
